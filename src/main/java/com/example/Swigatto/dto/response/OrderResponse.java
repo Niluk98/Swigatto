@@ -1,8 +1,10 @@
 package com.example.Swigatto.dto.response;
 
+import com.example.Swigatto.model.FoodItem;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,10 +17,26 @@ public class OrderResponse {
 
     String orderId;
 
-    String orderTotal;
+    double orderTotal;
+
 
     Date time;
 
-    List<MenuResponse> foodItems;
 
+    String customerName;
+
+
+    String customerMobile;
+
+
+    String deliveryPartnerName;
+
+
+    String deliveryPartnerMobile;
+
+
+    String restaurantName;
+
+
+    List<FoodResponse> foodItems;
 }

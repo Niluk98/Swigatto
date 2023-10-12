@@ -1,2 +1,4 @@
-package com.example.Swigatto.dto.response;public class DeliveryPartnerResponse {
+package com.example.Swigatto.dto.response;
+
+public class DeliveryPartnerResponse {
 }

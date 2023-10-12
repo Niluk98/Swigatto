@@ -26,7 +26,7 @@ public class OrderEntity {
 
     String orderId;
 
-    String orderTotal;
+    double orderTotal;
 
     @CreationTimestamp
     Date time;
