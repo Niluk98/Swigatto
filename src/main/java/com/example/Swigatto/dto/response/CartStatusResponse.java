@@ -3,7 +3,6 @@ package com.example.Swigatto.dto.response;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Date;
 import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -11,14 +10,22 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderResponse {
+public class CartStatusResponse {
 
-    String orderId;
+    String customerName;
 
-    String orderTotal;
+    String address;
 
-    Date time;
+    String customerMobileNo;
 
-    List<MenuResponse> foodItems;
+
+    double cartTotal;
+
+
+    List<FoodResponse> foodList;
+
+    String restaurantName;
+
+
 
 }

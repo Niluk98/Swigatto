@@ -26,6 +26,6 @@ public class RestaurantResponseDTO {
     boolean open;
 
 
-    List<FoodResponse> availableFoodItems=new ArrayList<>();
+    List<MenuResponse> availableFoodItems=new ArrayList<>();
 
 }

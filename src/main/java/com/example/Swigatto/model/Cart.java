@@ -1,7 +1,6 @@
 package com.example.Swigatto.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -24,6 +23,9 @@ public class Cart {
     @OneToOne
     @JoinColumn
     Customer customer;
+
+    @OneToMany(mappedBy = "cart",cascade =CascadeType.ALL)
+    List<FoodItem> FoodItems =new ArrayList<>();
 
 
 }

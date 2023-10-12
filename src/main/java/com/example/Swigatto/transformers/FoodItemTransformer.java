@@ -1,19 +1,19 @@
 package com.example.Swigatto.transformers;
 
-import com.example.Swigatto.dto.request.FoodRequest;
-import com.example.Swigatto.dto.response.FoodResponse;
-import com.example.Swigatto.model.FoodItems;
+import com.example.Swigatto.dto.request.MenuRequest;
+import com.example.Swigatto.dto.response.MenuResponse;
+import com.example.Swigatto.model.MenuItem;
 
 public class FoodItemTransformer {
 
-    public static FoodResponse foodToFoodResponse(FoodItems foodItems){
+    public static MenuResponse foodToFoodResponse(MenuItem menuItem){
 
-        return FoodResponse.builder().veg(foodItems.isVeg()).dishName(foodItems.getDishName()).available(foodItems.isAvailable())
-                .foodCategory(foodItems.getFoodCategory()).build();
+        return MenuResponse.builder().veg(menuItem.isVeg()).dishName(menuItem.getDishName()).available(menuItem.isAvailable())
+                .foodCategory(menuItem.getFoodCategory()).build();
     }
 
-    public static FoodItems foodRequestToFood(FoodRequest foodRequest){
-        return FoodItems.builder().price(foodRequest.getPrice()).foodCategory(foodRequest.getFoodCategory())
-                .available(foodRequest.isAvailable()).dishName(foodRequest.getDishName()).veg(foodRequest.isVeg()).build();
+    public static MenuItem foodRequestToFood(MenuRequest menuRequest){
+        return MenuItem.builder().price(menuRequest.getPrice()).foodCategory(menuRequest.getFoodCategory())
+                .available(menuRequest.isAvailable()).dishName(menuRequest.getDishName()).veg(menuRequest.isVeg()).build();
     }
 }

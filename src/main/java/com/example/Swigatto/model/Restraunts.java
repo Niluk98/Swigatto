@@ -35,7 +35,7 @@ public class Restraunts {
     boolean open;
 
     @OneToMany(mappedBy = "restraunt" ,cascade = CascadeType.ALL)
-    List<FoodItems> availableFoodItems=new ArrayList<>();
+    List<MenuItem> availableFoodItems=new ArrayList<>();
 
     @OneToMany(mappedBy = "restraunt" ,cascade = CascadeType.ALL)
     List<OrderEntity> orders=new ArrayList<>();

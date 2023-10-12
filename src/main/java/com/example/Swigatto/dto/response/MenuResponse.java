@@ -1,24 +1,20 @@
 package com.example.Swigatto.dto.response;
 
+import com.example.Swigatto.Enums.FoodCategory;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.Date;
-import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderResponse {
+public class MenuResponse {
+    String dishName;
 
-    String orderId;
+    boolean veg;
 
-    String orderTotal;
+    boolean available;
 
-    Date time;
-
-    List<MenuResponse> foodItems;
-
+    FoodCategory foodCategory;
 }

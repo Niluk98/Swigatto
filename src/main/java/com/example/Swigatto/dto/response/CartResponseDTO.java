@@ -14,5 +14,5 @@ public class CartResponseDTO {
 
     int cartTotal;
 
-    List<FoodResponse> foodItems;
+    List<MenuResponse> foodItems;
 }

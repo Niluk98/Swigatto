@@ -1,10 +1,10 @@
 package com.example.Swigatto.service;
 
-import com.example.Swigatto.dto.request.FoodRequest;
+import com.example.Swigatto.dto.request.MenuRequest;
 import com.example.Swigatto.dto.request.RestaurantRequestDTO;
 import com.example.Swigatto.dto.response.RestaurantResponseDTO;
 import com.example.Swigatto.exceptions.RestaurantNotFoundException;
-import com.example.Swigatto.model.FoodItems;
+import com.example.Swigatto.model.MenuItem;
 import com.example.Swigatto.model.Restraunts;
 import com.example.Swigatto.repository.RestaurantRepository;
 import com.example.Swigatto.transformers.FoodItemTransformer;
@@ -54,19 +54,19 @@ public class RestaurantService {
 
     }
 
-    public RestaurantResponseDTO addFoodToRestaurant(FoodRequest foodRequest) {
-        int restaurantId= foodRequest.getRestaurantId();
+    public RestaurantResponseDTO addMenuToRestaurant(MenuRequest menuRequest) {
+        int restaurantId= menuRequest.getRestaurantId();
         Optional<Restraunts> restrauntsOptional= restaurantRepository.findById(restaurantId);
         if(restrauntsOptional.isEmpty()){
             throw new RestaurantNotFoundException("Restaurant not found!!");
         }
         Restraunts restraunts=restrauntsOptional.get();
         //get food item from request
-        FoodItems foodItem = FoodItemTransformer.foodRequestToFood(foodRequest);
+        MenuItem foodItem = FoodItemTransformer.foodRequestToFood(menuRequest);
         //allocate restaurant to foodItem
         foodItem.setRestraunt(restraunts);
         // set the food item to restraurant
-        List<FoodItems> menu;
+        List<MenuItem> menu;
         if(restraunts.getAvailableFoodItems()==null){
             menu=new ArrayList<>();
             menu.add(foodItem);

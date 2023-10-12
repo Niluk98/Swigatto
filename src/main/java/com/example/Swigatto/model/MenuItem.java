@@ -2,9 +2,11 @@ package com.example.Swigatto.model;
 
 import com.example.Swigatto.Enums.FoodCategory;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
@@ -12,8 +14,8 @@ import lombok.experimental.FieldDefaults;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "food_item")
-public class FoodItems {
+@Table(name = "menu_item")
+public class MenuItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
@@ -29,13 +31,14 @@ public class FoodItems {
     @Enumerated(EnumType.STRING)
     FoodCategory foodCategory;
 
-    @ManyToOne
-    @JoinColumn
-    OrderEntity order;
+
 
     @ManyToOne
     @JoinColumn
     Restraunts restraunt;
+
+    @OneToMany(mappedBy = "menuItem",cascade = CascadeType.ALL)
+    List<FoodItem> foodItems=new ArrayList<>();
 
 
 

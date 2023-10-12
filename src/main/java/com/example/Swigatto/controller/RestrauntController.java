@@ -1,6 +1,6 @@
 package com.example.Swigatto.controller;
 
-import com.example.Swigatto.dto.request.FoodRequest;
+import com.example.Swigatto.dto.request.MenuRequest;
 import com.example.Swigatto.dto.request.RestaurantRequestDTO;
 import com.example.Swigatto.dto.response.RestaurantResponseDTO;
 import com.example.Swigatto.service.RestaurantService;
@@ -45,10 +45,10 @@ public class RestrauntController {
 
     }
 
-    @PostMapping("/addFood")
-    public ResponseEntity addFoodToRestaurant(@RequestBody FoodRequest foodRequest){
+    @PostMapping("/addMenu")
+    public ResponseEntity addMenuItemToRestaurant(@RequestBody MenuRequest menuRequest){
         try{
-            RestaurantResponseDTO restaurantResponse = restaurantService.addFoodToRestaurant(foodRequest);
+            RestaurantResponseDTO restaurantResponse = restaurantService.addMenuToRestaurant(menuRequest);
             return new ResponseEntity<>(restaurantResponse,HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);

@@ -1,6 +1,5 @@
 package com.example.Swigatto.dto.request;
 
-import com.example.Swigatto.Enums.FoodCategory;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -11,16 +10,10 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 public class FoodRequest {
 
-    int restaurantId;
+    int requiredQuantity;
 
-    String dishName;
+    String customerMobileNumber;
 
-    boolean veg;
-
-    boolean available;
-
-    double price;
-
-    FoodCategory foodCategory;
+    int menuItemId;
 
 }
